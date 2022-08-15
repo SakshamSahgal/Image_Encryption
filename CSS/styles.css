@@ -1,0 +1,25 @@
+#my_Table td,tr
+{
+      border-radius: 10px;
+      border: 2px solid rgb(0, 0, 0);
+      background-color: #96D4D4;
+}
+
+#output_pallet
+{
+   display: flex;
+   outline: auto;
+   justify-content: center;
+}
+
+#upload_bar
+{
+    background-color: #d0ff73;
+    outline: auto;
+}
+
+.body
+{
+    background-image: url("../GUI_Resources/background.png"); 
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
