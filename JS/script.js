@@ -24,10 +24,18 @@ var loadFile = function(event) {
             var blue = scannedData[i+2];
             var alpha = scannedData[i+3];
 
-            var tot = (red+green+blue);
-            scannedData[i] = tot/3; //modifying the pixel data
-            scannedData[i+1] = tot/3;
-            scannedData[i+2] = tot/3;
+            if(i%2 == 0)
+            {
+                scannedData[i] = (red+200)%256; //modifying the pixel data
+                scannedData[i+1] = (green+30)%256;
+                scannedData[i+2] = (blue+20)%256;
+            }
+            else
+            {
+                scannedData[i] =  (red-200)%256; //modifying the pixel data
+                scannedData[i+1] = (green-20)%256;
+                scannedData[i+2] = (blue-20)%256;
+            }
         }
 
         scannedImage.data = scannedData; //overiding the pixel data
