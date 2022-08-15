@@ -1,25 +1,53 @@
-#my_Table td,tr
-{
-      border-radius: 10px;
-      border: 2px solid rgb(0, 0, 0);
-      background-color: #96D4D4;
-}
-
-#output_pallet
-{
-   display: flex;
-   outline: auto;
-   justify-content: center;
-}
-
 #upload_bar
 {
+    z-index: 3;
     background-color: #d0ff73;
     outline: auto;
 }
 
-.body
+
+#preview_pallet /*pallet which contains the preview of uploaded image */
 {
+    display: flex;
+    outline: auto;
+    width: 600px;
+    height: 400px;
+    justify-content: center;
+    background-color: rgba(7, 7, 7, 0.55); /* Black w/opacity */
+    backdrop-filter: blur(6px);
+}
+
+#canvas_pallet /*pallet which contains the canvas (for modified image) */
+{
+    display: flex;
+    outline: auto;
+    width:  600px;
+    height: 400px;
+    justify-content: center;
+    background-color: rgba(7, 7, 7, 0.55); /* Black w/opacity */
+    backdrop-filter: blur(6px);
+}
+
+#Output_Canvas  
+{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit:scale-down; /* scaling down the uploaded image to fit inside the preview_pallet div*/ 
+}
+
+#output
+{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit:scale-down; /* scaling down the uploaded image to fit inside the preview_pallet div*/
+}
+
+body
+{
+    /* background-color: rgb(49, 49, 49); */
     background-image: url("../GUI_Resources/background.png"); 
     background-size: cover; /* Resize the background image to cover the entire container */
 }
+
+
+

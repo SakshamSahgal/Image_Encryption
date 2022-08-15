@@ -5,21 +5,37 @@
 <body>
     <link rel="stylesheet" href="CSS/styles.css">
 
-    <div id="upload_bar">
+    <!-- This is the top upload bar  -->
+    <div id="upload_bar"> 
         <p align="Center"> <input type="file" accept="image/*" name="image" id="file"  onchange="loadFile(event)"> </p>
     </div>
 
-    <div id="output_pallet">
-        <img id="output" height="400px"/>
-    </div>
+    <table>
+        <tr>
+            <td align="Center">
+                <!-- This is the preview pallet div-->
+                <p align="Center">Original</p>
+                <div id="preview_pallet" align = "Center">
+                    <img id="output" height="400px"/>
+                </div>
+            </td> 
+            <td align="Center"> 
+                <p align="Center">Modified</p>
+                    <!-- this is canavas div-->
+                <div id="canvas_pallet" align = "Center">
+                    <canvas id="Output_Canvas" width="0px" height="0px"></canvas>
+                </div>
+                 
+            </td>
+        </tr>
+    </table>
+   
+
+   
+    
+
     <script src="JS/script.js"></script>
 </body>
 </html>
-<script>
-    var loadFile = function(event) {
-        var image = document.getElementById('output');
-        image.src = URL.createObjectURL(event.target.files[0]);
-    };
-</script>
 
 
