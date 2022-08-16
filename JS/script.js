@@ -1,6 +1,28 @@
 var canvas = document.getElementById("Output_Canvas"); //getting the canvas element
 var ctx = canvas.getContext('2d'); //getting 2d instance of canvas
 
+
+
+function red_index(i,j,width)
+{
+    return (i*4*width + j*4);
+}
+
+function green_index(i,j,width)
+{
+    return (i*4*width + j*4 + 1);
+}
+
+function blue_index(i,j,width)
+{
+    return (i*4*width + j*4 + 2);
+}
+
+function alpha_index(i,j,width)
+{
+    return (i*4*width + j*4 + 3);
+}
+
 var loadFile = function(event) {
     
     var preview_image = document.getElementById('preview'); //accessing the preview image
@@ -15,22 +37,18 @@ var loadFile = function(event) {
 
         const scannedImage = ctx.getImageData(0,0,canvas.width,canvas.height); //scanning the canvas from (0,0) to (canvas.width , canvas.height) to get all pixel data
         console.log(scannedImage);
-        const scannedData = scannedImage.data;
+        const scannedData = scannedImage.data; //copying that image data into a 1D array 
+        
 
-        for(var i=0;i<scannedData.length;i+=4)  //since i , i+1 , i+2 , i+3 correnponds to  RGBA values of a pixel 
+
+        for(var i=0;i<preview_image.naturalHeight;i++)
         {
-            var red = scannedData[i];
-            var green = scannedData[i+1];
-            var blue = scannedData[i+2];
-            var alpha = scannedData[i+3];
-            var n = scannedData.length;
-            //modifying the pixel data
-            if(i%2 == 0)
+            for(var j=0;j<preview_image.naturalWidth;j++)
             {
-                scannedData[i] = (scannedData[i]^255);
-                scannedData[i+1] = (scannedData[i+1]^255);
-                scannedData[i+2] = (scannedData[i+2]^255);
-            } 
+                scannedData[red_index(i,j,preview_image.naturalWidth)] = 0;
+                scannedData[green_index(i,j,preview_image.naturalWidth)] = 0;
+                scannedData[blue_index(i,j,preview_image.naturalWidth)] = 25;
+            }
         }
 
         scannedImage.data = scannedData; //overiding the pixel data

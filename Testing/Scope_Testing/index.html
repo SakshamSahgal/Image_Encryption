@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+  
+
+
+
+</body>
+</html>
+
+<script>
+    function change_It(arr,i,sett)
+    {
+        i=10;
+        arr[0] = 10;
+        sett.add(0);
+    }
+
+    var arr = new Array();
+    var sett = new Set();
+    
+    arr[0] = 0;
+    arr[1] = 1;
+    arr[2] = 2;
+    arr[3] = 3;
+
+    sett.add(1);
+    sett.add(2);
+    sett.add(3);
+    sett.add(4);
+
+    var i = 0;
+    change_It(arr,i,sett);
+
+    console.log("i = " + i);
+    console.log("array = ");
+    for(const i of arr)
+        console.log(i);
+    console.log("set = ");
+    for(const i of sett)
+    console.log(i);
+
+
+    //variables are passed by value and objects (like arrays , sets , maps are passed by refrence)
+
+</script>
