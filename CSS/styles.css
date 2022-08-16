@@ -10,7 +10,7 @@
 {
     display: flex;
     outline: auto;
-    width: 600px;
+    width: 755px;
     height: 400px;
     justify-content: center;
     background-color: rgba(7, 7, 7, 0.55); /* Black w/opacity */
@@ -21,7 +21,7 @@
 {
     display: flex;
     outline: auto;
-    width:  600px;
+    width:  755px;
     height: 400px;
     justify-content: center;
     background-color: rgba(7, 7, 7, 0.55); /* Black w/opacity */
